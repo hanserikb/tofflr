@@ -14,5 +14,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/NSjogren/tofflr/issues"
+  },
+  "dependencies": {
+    "walk": "2.3.4",
+    "jclass": "0.2.5"
   }
 }

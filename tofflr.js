@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 var walk = require('walk'),
   Class = require('jclass');
 
@@ -47,6 +49,11 @@ var Tofflr = Class.extend({
 
 
 module.exports = function(folders, callback) {
+
+  if(__base == undefined) {
+    callback(new Error("Missing __base!"));
+  }
+
   var src_folders = folders;
 
   var packages = {};
@@ -74,7 +81,7 @@ module.exports = function(folders, callback) {
 
       var pkg = packageFromRoot(folder, root);
       var name = fileStats.name.substr(0, fileStats.name.length - 3);
-      var path = root + '/' + fileStats.name;
+      var path = __base + root + '/' + fileStats.name;
 
       packages[pkg + '.' + name] = require(path);
 
