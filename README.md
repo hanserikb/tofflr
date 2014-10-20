@@ -5,7 +5,11 @@ Java like package handling.
 
 
 ```javascript
-require('Tofflr')(['./src/test/', './src/main/' ], function(err, toffl) {
+
+// Needs a global variable to root directory
+global.__base = __dirname + '/';
+
+require('Tofflr')(['src/test/', 'src/main/' ], function(err, toffl) {
 
   if(err) {
     throw err;
