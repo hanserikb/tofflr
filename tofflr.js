@@ -22,11 +22,10 @@ var Tofflr = Class.extend({
       library = library.substr(0, library.length -1);
 
       var packages = {};
-
+      var regexp = new RegExp("^" + library + "[\\-\\w]+");
+      
       for(var pkg in this.packages) {
 
-
-        var regexp = new RegExp("^" + library + "[\\-\\w]+");
 
         if(pkg.match(regexp)) {
 
